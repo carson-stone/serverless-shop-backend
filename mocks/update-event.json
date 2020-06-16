@@ -1,0 +1,6 @@
+{
+  "body": "{\"productId\":\"100\",\"rating\":\"4\",\"image\":\"newImage.jpg\"}",
+  "pathParameters": {
+    "reviewId": "9478cc80-acee-11ea-b5f7-b5b4ce74f6e9"
+  }
+}

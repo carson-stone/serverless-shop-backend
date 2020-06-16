@@ -1,0 +1,8 @@
+{
+  "body": "{\"productId\":\"100\",\"rating\":\"5\",\"image\":\"product1.jpg\"}",
+  "requestContext": {
+    "identity": {
+      "cognitoIdentityId": "USER-SUB-1234"
+    }
+  }
+}
