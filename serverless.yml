@@ -17,6 +17,8 @@ provider:
 
   environment:
     reviewTableName: reviews
+    productTableName: products
+    productBucketName: serverless-shop-product-images
     stripeSecretKey: ${env:STRIPE_SECRET_KEY}
 
   iamRoleStatements:
@@ -54,7 +56,7 @@ functions:
     handler: list.main
     events:
       - http:
-          path: reviews/{productId}
+          path: reviews
           method: get
           cors: true
           authorizer: aws_iam
@@ -85,6 +87,14 @@ functions:
           method: post
           cors: true
           authorizer: aws_iam
+
+  getProducts:
+    handler: get-products.main
+    events:
+      - http:
+          path: products
+          method: get
+          cors: true
 
 resources:
   - ${file(resources/api-gateway-errors.yml)}
