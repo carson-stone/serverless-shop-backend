@@ -8,7 +8,7 @@ export const main = handler(async function (event, context) {
   const params = {
     TableName: process.env.reviewTableName,
     Item: {
-      productId: data.productId,
+      product: data.product,
       reviewId: uuid.v1(),
       userId: event.requestContext.identity.cognitoIdentityId,
       rating: data.rating,

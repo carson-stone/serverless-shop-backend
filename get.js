@@ -7,7 +7,7 @@ export const main = handler(async function (event, context) {
   const params = {
     TableName: process.env.reviewTableName,
     Key: {
-      productId: data.productId,
+      product: data.product,
       reviewId: event.pathParameters.reviewId,
     },
   };

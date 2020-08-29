@@ -6,9 +6,9 @@ export const main = handler(async function (event, context) {
 
   const params = {
     TableName: process.env.reviewTableName,
-    KeyConditionExpression: 'productId = :productId',
+    KeyConditionExpression: 'product = :product',
     ExpressionAttributeValues: {
-      ':productId': data.productId,
+      ':product': data.product,
     },
   };
 
