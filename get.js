@@ -2,7 +2,7 @@ import handler from './libs/handler-lib';
 import dynamoDB from './libs/dynamodb-lib';
 
 export const main = handler(async function (event, context) {
-  const data = JSON.parse(event.body);
+  const data = event.pathParameters;
 
   const params = {
     TableName: process.env.reviewTableName,

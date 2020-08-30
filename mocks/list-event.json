@@ -1,3 +1,5 @@
 {
-  "body": "{\"productId\":\"100\"}"
+  "pathParameters": {
+    "product": "Apple Watch Series 2"
+  }
 }
