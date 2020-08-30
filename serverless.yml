@@ -56,7 +56,7 @@ functions:
     handler: list.main
     events:
       - http:
-          path: reviews
+          path: products/{product}/reviews
           method: get
           cors: true
           authorizer: aws_iam
