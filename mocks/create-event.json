@@ -1,5 +1,5 @@
 {
-  "body": "{\"product\":\"Apple Watch Series 2\",\"rating\":\"5\",\"image\":\"product1.jpg\"}",
+  "body": "{\"product\":\"Apple%20Watch%20Series%202\",\"rating\":\"5\",\"image\":\"test-image\"}",
   "requestContext": {
     "identity": {
       "cognitoIdentityId": "USER-SUB-1234"

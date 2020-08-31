@@ -1,10 +1,7 @@
 import handler from './libs/handler-lib';
 import dynamoDB from './libs/dynamodb-lib';
-import getS3Object from './libs/s3-lib';
-
-function encode(data) {
-  return Buffer.from(data).toString('base64');
-}
+import encode from './libs/encode-lib';
+import { getS3Object } from './libs/s3-lib';
 
 export const main = handler(async function (event, context) {
   const params = {

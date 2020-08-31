@@ -1,18 +1,27 @@
 import handler from './libs/handler-lib';
 import dynamoDB from './libs/dynamodb-lib';
+import encode from './libs/encode-lib';
+import { getS3Object } from './libs/s3-lib';
 
 export const main = handler(async function (event, context) {
-  const product = decodeURI(event.pathParameters.product);
-
   const params = {
     TableName: process.env.reviewTableName,
     KeyConditionExpression: 'product = :product',
     ExpressionAttributeValues: {
-      ':product': product,
+      ':product': decodeURI(event.pathParameters.product),
     },
   };
 
-  const result = await dynamoDB.query(params);
+  let result = await dynamoDB.query(params);
 
-  return result.Items;
+  let reviews = [];
+
+  for (let review of result.Items) {
+    result = await getS3Object(review.imagePath);
+    review.image = encode(result.Body);
+
+    reviews.push(review);
+  }
+
+  return reviews;
 });
